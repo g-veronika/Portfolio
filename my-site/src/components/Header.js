@@ -32,18 +32,30 @@ const Menu = styled.nav`
     color: #CCD6F6;
     display: flex;
     justify-content: flex-end;
-
+    cursor: pointer;
 
     li {
         list-style: none;
         margin: 0 1rem;
+       
+        &:hover {
+            color: #64FFDA;
+            transform: translateY(-3px);
+            transition: all 0.3s ease-in-out;
+        }
     }
+
 `
 const Logo = styled.div`
     color: #64FFDA;
     font-size: 2rem;
     padding: 2rem 2.7rem;
+    cursor: pointer;
 
+    &:hover {
+            transform: translateY(-3px);
+            transition: all 0.3s ease-in-out;
+        }
 `
 
 const MyBtn = styled.button`
@@ -54,4 +66,10 @@ const MyBtn = styled.button`
     border-color: #64FFDA;
     border-radius: 0.3rem;
     cursor: pointer;
+
+    &:hover {
+            color: #64FFDA;
+            transform: translateY(-3px);
+            transition: all 0.3s ease-in-out;
+        }
 `

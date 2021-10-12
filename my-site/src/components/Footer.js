@@ -1,10 +1,19 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-
+import { AiFillGithub } from "react-icons/ai";
+import { GrLinkedin } from "react-icons/gr";
+import { GrInstagram } from "react-icons/gr";
 
 function Footer() {
     return (
         <Box>
+            <Icons>
+                <Icon><a href="https://github.com/g-veronika" target="_blank"><AiFillGithub /></a></Icon>
+                <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank"><GrLinkedin /></a></Icon>
+                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank"><GrInstagram /></a></Icon>
+                <Mail><a href="mailto:gveronikaa@hotmail.com">gveronikaa@hotmail.com</a></Mail>
+            </Icons>
+            
             Designed & Built by Veronika
         </Box>
     )
@@ -17,4 +26,55 @@ const Box = styled.div`
     color: #8892B0;
     padding: 2rem 2rem;
     text-align: center;
+`
+
+const Icons = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 10vh;
+
+`
+
+const Icon = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: #64FFDA;
+        transform: translateY(-3px);
+        transition: all 0.3s ease-in-out;
+    }
+`
+const Mail = styled.div`
+    color: #8892B0;
+    display: flex;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    position: fixed;
+    bottom: 10vh;
+    right: 0;
+    margin-right: 2rem;
+    
+    
+    a[href^="mailto:"]{ 
+    color: #8892B0;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Arial, Helvetica;
+    }
+
+    &:hover {
+        color: #64FFDA;
+        transform: translateY(-3px);
+        transition: all 0.3s ease-in-out;
+    }
+
 `
