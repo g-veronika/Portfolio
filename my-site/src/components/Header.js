@@ -20,8 +20,6 @@ const Header = () => {
     }
 
 
-
-
     return (
         <Nav>
             {console.log(active)}
@@ -31,13 +29,14 @@ const Header = () => {
                 <ScrollLink to="accueil" smooth={true} offset={-100}><li>Accueil</li></ScrollLink>
                 <ScrollLink to="experiences" smooth={true} offset={-120}><li>Expériences</li></ScrollLink>
                 <ScrollLink to="projets" smooth={true} offset={-120}><li>Projets</li></ScrollLink>
-                <MyBtn>Contact</MyBtn>
+                <MyBtn><ScrollLink to="contact" smooth={true} offset={-100}><li>Contact</li></ScrollLink></MyBtn>
             </Menu>
             <MenuMobile active={active}>
                 <Close onClick={handleClick}><ImCross /></Close>
                 <Links>
                     <MobileLink to="accueil" smooth={true} offset={-100} onClick={handleClick}>Accueil</MobileLink>
                     <MobileLink to="experiences" smooth={true} offset={-120} onClick={handleClick}>Expériences</MobileLink>
+                    <MobileLink to="projets" smooth={true} offset={-120} onClick={handleClick}>Projets</MobileLink>
                     <MobileLink to="projets" smooth={true} offset={-120} onClick={handleClick}>Projets</MobileLink>
                 </Links>
             </MenuMobile>

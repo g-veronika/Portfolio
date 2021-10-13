@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Experience from './components/Experience';
 import Work from './components/Work';
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 
 
 
@@ -15,7 +15,7 @@ function App() {
       <Home />
       <Experience />
       <Work />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </div>
   );

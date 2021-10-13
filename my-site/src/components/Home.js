@@ -9,7 +9,7 @@ function Home() {
                 <MyTitle>Bonjour, je m'appelle</MyTitle>
                 <Name>Veronika.</Name>
                 <Things> Je crée des choses pour le web.</Things>
-                <Txt>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Txt>
+                <Txt>Après avoir travaillé dans le secteur paramédical, j'ai décidé de m'orienter et de me former dans le développement web. De la création d'interfaces dynamiques à la gestion complexe de bases de données, je m'épanouis en résolvant des problèmes et en apprenant de nouvelles choses.</Txt>
                 <ScrollLink to="experiences" smooth={true} offset={-120}><MyButton>Expériences</MyButton></ScrollLink>
             </ContentWrapper>
         </Box>
