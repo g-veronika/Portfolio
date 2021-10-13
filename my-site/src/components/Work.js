@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Paris from '../photos/Paris.png'
+import {Link} from 'react-scroll'
+
+
 
 function Work() {
     return (
         <Box>
-            <Titre>Work</Titre>
+            <Titre id="projets">Projets</Titre>
             <Imgtitre>Project 'Days In Paris'</Imgtitre>
-            <Lien><Link href="https://days-in-paris.netlify.app/" target="_blank">https://days-in-paris.netlify.app/</Link></Lien>
+            <Lien><LinkUn href="https://days-in-paris.netlify.app/" target="_blank" rel="noreferrer" >https://days-in-paris.netlify.app/</LinkUn></Lien>
             <Datetitre>juillet 2021 - août 2021</Datetitre>
             <Img src= {Paris} alt="image days in paris"/>
             <Description>Le projet Days in Paris a pour but de créer une application qui permette à l’utilisateur d'organiser son séjour à Paris.
@@ -27,12 +30,11 @@ const Box = styled.div`
     font-size: 25px;
 `
 const Titre = styled.h1`
-    margin-bottom: 2rem;
-    color: #8892B0;
+    color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
+    margin-bottom: 5%;
 `
-
 
 const Img = styled.img`
     width: 50%;
@@ -47,18 +49,28 @@ const Datetitre = styled.h3`
     padding: 0;
 `
 
-const Lien = styled.h1`
+const Lien = styled.div`
     font-size: 20px;
     margin: 1rem 0 0 0;
-    color: #64FFDA;
+    color: #64FFDA !important;
+    transition: all 0.3s ease-in-out;
+
+    a {
+        color: white 
+    }
+
+    &:hover {
+        color: #64FFDA;
+        transform: translateY(-3px);
+        transition: all 0.3s ease-in-out;
+    }
     
 `
 
-const Link = styled.a`
-    font-size: 20px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
+const LinkUn = styled.a`
+    text-decoration: none;
+    cursor: pointer; 
+    
 `
 const Description = styled.div`
     font-size: 20px;

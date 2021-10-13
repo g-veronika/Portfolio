@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiTwotoneHeart } from "react-icons/ai";
 import styled from 'styled-components/macro'
+import {Link} from 'react-scroll'
 
 
 
@@ -9,11 +10,11 @@ const Header = () => {
         <Nav>
             <Logo><AiTwotoneHeart /></Logo>
             <Menu>
-                <li>About</li>
-                <li>Experience</li>
-                <li>Work</li>
-                <li>Contact</li>   
-                <MyBtn>Resume</MyBtn>
+                <ScrollLink to="accueil" smooth={true} offset={-100}><li>Accueil</li></ScrollLink>
+                <ScrollLink to="experiences" smooth={true} offset={-100}><li>Expériences</li></ScrollLink>
+                <ScrollLink to="projets" smooth={true} offset={-100}><li>Projets</li></ScrollLink>
+ 
+                <MyBtn>Contact</MyBtn>
             </Menu>
         </Nav>
     )
@@ -34,9 +35,12 @@ const Menu = styled.nav`
     justify-content: flex-end;
     cursor: pointer;
 
+
+
     li {
         list-style: none;
         margin: 0 1rem;
+        transition: all 0.3s ease-in-out;
        
         &:hover {
             color: #64FFDA;
@@ -73,9 +77,14 @@ const MyBtn = styled.button`
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
+
     &:hover {
             color: #64FFDA;
             transform: translateY(-3px);
             transition: all 0.3s ease-in-out;
         }
+`
+
+const ScrollLink = styled(Link)`
+
 `

@@ -6,42 +6,44 @@ import { AiFillCaretRight } from "react-icons/ai";
 function Experience() {
     return (
         <Box>
-            <Formations>Experience</Formations> 
-            <Line>
-                <About>
-                    <NomEcole>O'clock</NomEcole>
-                    <Date>février 2021 - août 2021</Date>
-                </About>
-                <Description>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Réalisation de sites web dynamiques et responsives</Liste>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Construction d'API sécurisée</Liste>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Manipulation de BDD</Liste>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Travail en équipe</Liste>
-                </Description>
-            </Line>
-            <Line>
-                <About>
-                    <NomEcole>Institut Supérieur d'Optique (ISO), Lyon</NomEcole>
-                    <Date>septembre 2016 - juillet 2018</Date>
-                </About>
-                <Description>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Mathématique et Optique Physique et Géométrique</Liste> 
-                    <Liste><Logo><AiFillCaretRight /></Logo>Management et économie</Liste>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Examen de vue, montage des verres, prise de
-                    mesures</Liste>
-                </Description>
-            </Line>
-            <Line>
-                <About>
-                    <NomEcole>Université d'État de l'aviation civile, Saint-Pétersbourg, Russie</NomEcole>
-                    <Date>septembre 2011 - juillet 2015</Date>
-                </About>
-                <Description>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Mathématiques et statistiques</Liste>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Technologies modernes du traitement de l'information</Liste>
-                    <Liste><Logo><AiFillCaretRight /></Logo>Management de communication, marketing</Liste>
-                </Description>
-            </Line>
+            <Formations id="experiences">Expériences</Formations> 
+            <BigBox>
+                <Line>
+                    <About>
+                        <NomEcole>O'clock</NomEcole>
+                        <Date>février 2021 - août 2021</Date>
+                    </About>
+                    <Description>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Réalisation de sites web dynamiques et responsives</Liste>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Construction d'API sécurisée</Liste>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Manipulation de BDD</Liste>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Travail en équipe</Liste>
+                    </Description>
+                </Line>
+                <Line>
+                    <About>
+                        <NomEcole>Institut Supérieur d'Optique (ISO), Lyon</NomEcole>
+                        <Date>septembre 2016 - juillet 2018</Date>
+                    </About>
+                    <Description>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Mathématique et Optique Physique et Géométrique</Liste> 
+                        <Liste><Logo><AiFillCaretRight /></Logo>Management et économie</Liste>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Examen de vue, montage des verres, prise de
+                        mesures</Liste>
+                    </Description>
+                </Line>
+                <Line>
+                    <About>
+                        <NomEcole>Université d'État de l'aviation civile, Saint-Pétersbourg, Russie</NomEcole>
+                        <Date>septembre 2011 - juillet 2015</Date>
+                    </About>
+                    <Description>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Mathématiques et statistiques</Liste>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Technologies modernes du traitement de l'information</Liste>
+                        <Liste><Logo><AiFillCaretRight /></Logo>Management de communication, marketing</Liste>
+                    </Description>
+                </Line>
+            </BigBox>
         </Box>
     )
 }
@@ -55,11 +57,15 @@ const Box = styled.div`
     text-align: center;
     font-size: 25px;
 `
+const BigBox = styled.div`
+    display: grid;
+`
 
-const Formations = styled.h2`
-    color: #8892B0;
+const Formations = styled.h1`
+    color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 40px;
+    margin-bottom: 5%;
 `
 
 const NomEcole = styled.h3`
@@ -73,7 +79,9 @@ const NomEcole = styled.h3`
 const Date = styled.h4`
     color: #8892B0;
     font-size: 14px;
-    align-self: center;
+    text-align: left;
+    font-style: italic;
+    margin-top:5%
 `
 
 const Description = styled.div`
@@ -85,20 +93,26 @@ const Description = styled.div`
 
 const About = styled.div`
     color: #8892B0;
-    padding: 2rem 2rem;
+    padding: 0rem 2rem;
 `
 
 const Line = styled.div`
-    display: flex;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
     justify-content: center;
-    margin: 2.5rem 0 2rem 0;
+    margin: 2rem auto;
     color: #8892B0;
+    width: 60vw;
+
+    @media screen and (max-width:768px){
+        grid-template-columns: 1fr;
+    }
 `
 
 const Liste = styled.li`
     list-style: none;
     display: flex;
-    align-items: center;
+    text-align: left;
     padding: 0 0.5rem 0.5rem 0;
 `
 const Logo = styled.div`

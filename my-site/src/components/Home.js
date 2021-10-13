@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-
+import {Link} from 'react-scroll'
 
 function Home() {
     return (
-        <Box>
-            <MyTitle>Hi, my name is</MyTitle>
+        <Box id="accueil">
+            <MyTitle>Bonjour, je m'appelle</MyTitle>
             <Name>Veronika.</Name>
-            <Things>I build things for the web.</Things>
+            <Things> Je crée des choses pour le web.</Things>
             <Txt>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Txt>
-            <MyButton>Check out my cours!</MyButton>
+            <ScrollLink to="experiences" smooth={true} offset={-100}><MyButton>expériences</MyButton></ScrollLink>
         </Box>
     )
 }
@@ -69,4 +69,8 @@ const MyButton = styled.button`
             color: #0A192F;
             background: #64FFDA;
         }
+`
+
+const ScrollLink = styled(Link)`
+
 `

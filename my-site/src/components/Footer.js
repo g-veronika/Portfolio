@@ -8,10 +8,10 @@ function Footer() {
     return (
         <Box>
             <Icons>
-                <Icon><Link href="https://github.com/g-veronika" target="_blank"><AiFillGithub /></Link></Icon>
-                <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank"><GrLinkedin /></a></Icon>
-                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank"><GrInstagram /></a></Icon>
-                <Mail><a href="mailto:gveronikaa@hotmail.com">gveronikaa@hotmail.com</a></Mail>
+                <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
+                <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
+                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>
+                <Mail><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></Mail>
             </Icons>
             
             Designed & Built by Veronika
@@ -87,7 +87,7 @@ const Mail = styled.div`
         color: #64FFDA;
         transform: translateY(-3px);
         transition: all 0.3s ease-in-out;
-    }
+        }
     }
 
     
