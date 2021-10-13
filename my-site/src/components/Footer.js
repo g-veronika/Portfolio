@@ -10,10 +10,15 @@ function Footer() {
             <Icons>
                 <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
                 <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
-                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>
-                <Mail><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></Mail>
+                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>               
             </Icons>
-            
+            <IconsMobile>
+                <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
+                <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
+                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>               
+            </IconsMobile>
+            <Mail><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></Mail>
+            <MailMobile><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></MailMobile>
             Designed & Built by Veronika
         </Box>
     )
@@ -34,6 +39,25 @@ const Icons = styled.div`
     position: fixed;
     bottom: 10vh;
     color: #8892B0 !important;
+
+    @media screen and (max-width:768px){
+        display: none;
+    }
+
+`
+const IconsMobile = styled.div`
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    bottom: 10vh;
+    color: #8892B0 !important;
+
+    @media screen and (max-width:768px){
+        display: flex;
+        position: relative;
+        justify-content: center;
+        bottom: 0;
+    }
 
 `
 
@@ -90,7 +114,40 @@ const Mail = styled.div`
         }
     }
 
+    @media screen and (max-width:768px){
+        display: none;
+    }
+`
+
+const MailMobile = styled.div`
+    color: #8892B0;
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    position: fixed;
+    margin: 1rem;
     
+    a{ 
+        color: #8892B0;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: Arial, Helvetica;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+        color: #64FFDA;
+        transform: translateY(-3px);
+        transition: all 0.3s ease-in-out;
+        }
+    }
+    @media screen and (max-width:768px){
+        display: flex;
+        position: relative;
+        justify-content: center;
+        bottom: 0;
+    }
+
 
 `
 

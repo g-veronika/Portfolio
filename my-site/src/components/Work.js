@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Paris from '../photos/Paris.png'
-import {Link} from 'react-scroll'
+// import {Link} from 'react-scroll'
 
 
 

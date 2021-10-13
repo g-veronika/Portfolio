@@ -1,21 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiTwotoneHeart } from "react-icons/ai";
 import styled from 'styled-components/macro'
 import {Link} from 'react-scroll'
-
+import {BiMenuAltRight} from "react-icons/bi";
+import {ImCross} from "react-icons/im"; 
 
 
 const Header = () => {
+
+    const [active, setActive] = useState(false)
+
+    const handleClick = () => {
+        if (active) {
+            setActive(false)
+        } else {
+            setActive(true)
+        }
+        
+    }
+
+
+
+
     return (
         <Nav>
-            <Logo><AiTwotoneHeart /></Logo>
-            <Menu>
+            {console.log(active)}
+            <Logo to="accueil" smooth={true} offset={-100}><AiTwotoneHeart /></Logo>
+            <LogoMobile onClick={handleClick}><BiMenuAltRight /></LogoMobile>
+            <Menu>             
                 <ScrollLink to="accueil" smooth={true} offset={-100}><li>Accueil</li></ScrollLink>
-                <ScrollLink to="experiences" smooth={true} offset={-100}><li>Expériences</li></ScrollLink>
-                <ScrollLink to="projets" smooth={true} offset={-100}><li>Projets</li></ScrollLink>
- 
+                <ScrollLink to="experiences" smooth={true} offset={-120}><li>Expériences</li></ScrollLink>
+                <ScrollLink to="projets" smooth={true} offset={-120}><li>Projets</li></ScrollLink>
                 <MyBtn>Contact</MyBtn>
             </Menu>
+            <MenuMobile active={active}>
+                <Close onClick={handleClick}><ImCross /></Close>
+                <Links>
+                    <MobileLink to="accueil" smooth={true} offset={-100} onClick={handleClick}>Accueil</MobileLink>
+                    <MobileLink to="experiences" smooth={true} offset={-120} onClick={handleClick}>Expériences</MobileLink>
+                    <MobileLink to="projets" smooth={true} offset={-120} onClick={handleClick}>Projets</MobileLink>
+                </Links>
+            </MenuMobile>
         </Nav>
     )
 }
@@ -28,6 +53,9 @@ const Nav = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
 `
 const Menu = styled.nav`
     color: #CCD6F6;
@@ -49,8 +77,33 @@ const Menu = styled.nav`
         }
     }
 
+    @media screen and (max-width:768px){
+        display: none;
+    }
+
 `
-const Logo = styled.div`
+
+const MenuMobile = styled.div`
+    display: ${({active}) => active ? 'flex' : 'none'};
+
+    @media screen and (max-width:768px){
+        z-index: 10;
+        background: #0A192F;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: white;
+    }
+`
+
+const Logo = styled(Link)`
     color: #64FFDA;
     font-size: 2rem;
     padding: 2rem 2.7rem;
@@ -64,7 +117,21 @@ const Logo = styled.div`
             transition: all 0.3s ease-in-out;
         }
     }
+
     
+    
+`
+
+const LogoMobile = styled.div`
+    display:none;
+    color: white;
+    margin: 0 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+
+    @media screen and (max-width:768px){
+        display: flex;
+    }
 `
 
 const MyBtn = styled.button`
@@ -87,4 +154,30 @@ const MyBtn = styled.button`
 
 const ScrollLink = styled(Link)`
 
+`
+
+const MobileLink = styled(Link)`
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: #64FFDA;
+        transition: all 0.3s ease-in-out;
+    }
+`
+const Links = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    
+`
+
+const Close = styled.div`
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 3rem;
 `
