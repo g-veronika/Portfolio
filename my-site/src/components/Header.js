@@ -52,10 +52,15 @@ const Logo = styled.div`
     padding: 2rem 2.7rem;
     cursor: pointer;
 
-    &:hover {
+    svg {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
             transform: translateY(-3px);
             transition: all 0.3s ease-in-out;
         }
+    }
+    
 `
 
 const MyBtn = styled.button`
@@ -66,6 +71,7 @@ const MyBtn = styled.button`
     border-color: #64FFDA;
     border-radius: 0.3rem;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
             color: #64FFDA;

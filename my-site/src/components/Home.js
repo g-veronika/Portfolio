@@ -61,9 +61,12 @@ const MyButton = styled.button`
     border-color: #64FFDA;
     border-radius: 0.4rem;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
-            transform: translateY(-3px);
+            transform: translateY(-1.5px);
             transition: all 0.3s ease-in-out;
+            color: #0A192F;
+            background: #64FFDA;
         }
 `

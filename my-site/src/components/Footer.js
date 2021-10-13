@@ -8,7 +8,7 @@ function Footer() {
     return (
         <Box>
             <Icons>
-                <Icon><a href="https://github.com/g-veronika" target="_blank"><AiFillGithub /></a></Icon>
+                <Icon><Link href="https://github.com/g-veronika" target="_blank"><AiFillGithub /></Link></Icon>
                 <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank"><GrLinkedin /></a></Icon>
                 <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank"><GrInstagram /></a></Icon>
                 <Mail><a href="mailto:gveronikaa@hotmail.com">gveronikaa@hotmail.com</a></Mail>
@@ -33,6 +33,7 @@ const Icons = styled.div`
     flex-direction: column;
     position: fixed;
     bottom: 10vh;
+    color: #8892B0 !important;
 
 `
 
@@ -43,13 +44,25 @@ const Icon = styled.div`
     font-size: 1.5rem;
     padding: 0.7rem;
     cursor: pointer;
+    
     transition: all 0.3s ease-in-out;
+    color: #8892B0 !important;
+    &:active {
+        border: 1px dotted #64FFDA;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        }
 
-    &:hover {
+    svg {
+        color: #8892B0 ;
+        transition: all 0.3s ease-in-out;
+        &:hover {
         color: #64FFDA;
         transform: translateY(-3px);
         transition: all 0.3s ease-in-out;
+        }
     }
+
 `
 const Mail = styled.div`
     color: #8892B0;
@@ -63,18 +76,23 @@ const Mail = styled.div`
     right: 0;
     margin-right: 2rem;
     
-    
-    a[href^="mailto:"]{ 
-    color: #8892B0;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: Arial, Helvetica;
-    }
+    a{ 
+        color: #8892B0;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: Arial, Helvetica;
+        transition: all 0.3s ease-in-out;
 
-    &:hover {
+        &:hover {
         color: #64FFDA;
         transform: translateY(-3px);
         transition: all 0.3s ease-in-out;
     }
+    }
 
+    
+
+`
+
+const Link = styled.a`
 `
