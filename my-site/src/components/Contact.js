@@ -62,5 +62,5 @@ const Mail = styled.div`
 const Logo = styled.div`
     color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 2rem;
 `
