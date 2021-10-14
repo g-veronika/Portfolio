@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Paris from '../photos/Paris.png'
-// import {Link} from 'react-scroll'
-
 
 
 function Work() {
@@ -52,19 +50,23 @@ const Datetitre = styled.h3`
 const Lien = styled.div`
     font-size: 20px;
     margin: 1rem 0 0 0;
-    color: #64FFDA !important;
+    color: white !important;
     transition: all 0.3s ease-in-out;
 
     a {
-        color: white 
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover { 
+            color: #64FFDA !important;
+            transform: translateY(-3px);
+            transition: all 0.3s ease-in-out;
+        }
+    
     }
 
-    &:hover {
-        color: #64FFDA;
-        transform: translateY(-3px);
-        transition: all 0.3s ease-in-out;
-    }
-    
+   
 `
 
 const LinkUn = styled.a`
