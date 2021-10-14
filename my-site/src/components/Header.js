@@ -6,8 +6,8 @@ import {BiMenuAltRight} from "react-icons/bi";
 import {ImCross} from "react-icons/im"; 
 
 
-const Header = () => {
-
+const Header = (props) => {
+    
     const [active, setActive] = useState(false)
 
     const handleClick = () => {
@@ -21,8 +21,8 @@ const Header = () => {
 
 
     return (
-        <Nav>
-            {console.log(active)}
+        <Nav small={props.smallHeader}>
+            
             <Logo to="accueil" smooth={true} offset={-100}><AiTwotoneHeart /></Logo>
             <LogoMobile onClick={handleClick}><BiMenuAltRight /></LogoMobile>
             <Menu>             
@@ -47,7 +47,7 @@ const Header = () => {
 export default Header;
 
 const Nav = styled.div`
-    height: 100px;
+    height: ${({small}) => small ? '60px' : '100px'};
     background: #0A192F;
     display: flex;
     justify-content: space-between;
@@ -55,6 +55,7 @@ const Nav = styled.div`
     position: fixed;
     width: 100%;
     top: 0;
+    transition: all 0.6s ease;
 `
 const Menu = styled.nav`
     color: #CCD6F6;

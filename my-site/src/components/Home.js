@@ -20,7 +20,7 @@ export default Home;
 
 const Box = styled.div`
     height: calc(100vh + 20px);
-    background: #0A192F;
+    background: inherit;
     overflow: auto;
     padding: 10rem;
     margin-top: 100px;

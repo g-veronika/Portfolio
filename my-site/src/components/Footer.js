@@ -3,11 +3,25 @@ import styled from 'styled-components/macro'
 import { AiFillGithub } from "react-icons/ai";
 import { GrLinkedin } from "react-icons/gr";
 import { GrInstagram } from "react-icons/gr";
+import { IoColorPaletteSharp } from 'react-icons/io5'
 
-function Footer() {
+function Footer(props) {
+
+    const changeDark = (event) => {
+        props.setPrimaryColor(true)
+    }
+
+    const changeLight = (event) => {
+        props.setPrimaryColor(false)
+    }
+
     return (
         <Box>
             <Icons>
+                <ColorChoice>
+                    <ColorPick onClick={changeDark}>< IoColorPaletteSharp css={'color: #0A192F'}/></ColorPick>
+                    <ColorPick css={'color: #3e6eb5'}  onClick={changeLight}>< IoColorPaletteSharp/></ColorPick>
+                 </ColorChoice>
                 <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
                 <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
                 <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>               
@@ -31,6 +45,30 @@ const Box = styled.div`
     color: #8892B0;
     padding: 2rem 2rem;
     text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+`
+
+const ColorChoice = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    border: 1px dotted #64FFDA;
+    font-size: 1.2rem;
+    background-color: rgb(95 237 224 / 70%);
+    border-radius: 10px;
+    
+    svg {
+        
+    }
+    
+`
+
+const ColorPick = styled.div`
+    margin: 1rem 0;
+    cursor: pointer;
 `
 
 const Icons = styled.div`

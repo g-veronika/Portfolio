@@ -51,7 +51,7 @@ function Experience() {
 export default Experience
 
 const Box = styled.div`
-    background: #0A192F;
+    background: inherit;
     color: #8892B0;
     padding: 2rem 2rem;
     text-align: center;
