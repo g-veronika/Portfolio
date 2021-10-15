@@ -9,19 +9,16 @@ import {Animated} from "react-animated-css";
 function Experience() {
 
     const[animatedTitle, setAnimatedTitle] = useState(false);
-    const[animatedProjects, setAnimatedProjects] = useState(false);
 
 
     const visibleEffect = () => {
-        if(window.scrollY > 360 && window.scrollY < 1000) {
+        if(window.scrollY > 300 && window.scrollY < 1000) {
             setAnimatedTitle(true)
           }
           else {
             setAnimatedTitle(false)
           }
     }
-    console.log(window.scrollY)
-    console.log(animatedTitle)
 
     document.addEventListener('scroll', visibleEffect)
 

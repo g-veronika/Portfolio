@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Paris from '../photos/Paris.png'
+import {Animated} from "react-animated-css";
+
 
 
 function Work() {
+
+
+    const[animatedWork, setAnimatedWork] = useState(false);
+
+    const visibleEffect = () => {
+        if(window.scrollY > 1000 && window.scrollY < 1750) {
+            setAnimatedWork(true)
+          }
+          else {
+            setAnimatedWork(false)
+          }
+    }
+
+    console.log(window.scrollY)
+
+    document.addEventListener('scroll', visibleEffect);
+    
     return (
         <Box>
-            <Titre id="projets">Projets</Titre>
+            <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" animationInDuration={700} animationOutDuration={700} isVisible={animatedWork}><Titre id="projets">Projets</Titre></Animated>
             <Imgtitre>Project 'Days In Paris'</Imgtitre>
             <Lien><LinkUn href="https://days-in-paris.netlify.app/" target="_blank" rel="noreferrer" >https://days-in-paris.netlify.app/</LinkUn></Lien>
             <Datetitre>juillet 2021 - août 2021</Datetitre>
