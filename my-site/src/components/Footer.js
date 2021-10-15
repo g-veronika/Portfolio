@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import { AiFillGithub } from "react-icons/ai";
 import { GrLinkedin } from "react-icons/gr";
 import { GrInstagram } from "react-icons/gr";
-import { IoColorPaletteSharp } from 'react-icons/io5'
+import { IoColorPaletteSharp } from 'react-icons/io5';
+import {Animated} from "react-animated-css";
+
 
 function Footer(props) {
+
+    const[animatedPalette, setAnimatedPalette] = useState(true);
+    const[animatedGit, setAnimatedGit] = useState(false);
+    const[animatedLinkedIn, setAnimatedLinkedIn] = useState(false);
+    const[animatedInsta, setAnimatedInsta] = useState(false);
+    const [visible, setVisible] = useState(false)
 
     const changeDark = (event) => {
         props.setPrimaryColor(true)
@@ -15,16 +23,43 @@ function Footer(props) {
         props.setPrimaryColor(false)
     }
 
+
+    
+    const visibleEffect = () => {
+            setAnimatedPalette(false)
+    }
+    document.addEventListener('scroll', visibleEffect)
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setVisible(true)
+            setAnimatedGit(true)
+        }, 400)
+        setTimeout(() => {
+            setAnimatedLinkedIn(true)
+        }, 600)
+        setTimeout(() => {
+            setAnimatedInsta(true)
+        }, 800)
+    }, [])
+
+
+
     return (
         <Box>
             <Icons>
+
+            <Animated animationIn="fadeInLeft" animationOut="fadeInLeft" animationInDuration={1400} animationOutDuration={1400} isVisible={animatedPalette}>        
                 <ColorChoice>
                     <ColorPick onClick={changeDark}>< IoColorPaletteSharp css={'color: #0A192F'}/></ColorPick>
                     <ColorPick css={'color: #3e6eb5'}  onClick={changeLight}>< IoColorPaletteSharp/></ColorPick>
                  </ColorChoice>
-                <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
-                <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
-                <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>               
+            </Animated>
+                {console.log(animatedGit)}
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedGit}><Icon visible={visible}><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon></Animated>
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedLinkedIn}><Icon visible={visible}><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon></Animated>
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedInsta}><Icon visible={visible}><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon></Animated>           
             </Icons>
             <IconsMobile>
                 <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
@@ -100,7 +135,8 @@ const IconsMobile = styled.div`
 `
 
 const Icon = styled.div`
-    display: flex;
+    display: flex ;
+    visibility: ${({visible}) => visible ? 'visible' : 'hidden'};
     flex-direction: column;
     text-align: left;
     font-size: 1.5rem;
