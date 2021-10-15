@@ -1,12 +1,34 @@
-import React from 'react'
+import React, {  useState } from 'react';
+
 import styled from 'styled-components/macro'
 import { AiFillCaretRight } from "react-icons/ai";
+import {Animated} from "react-animated-css";
+
 
 
 function Experience() {
+
+    const[animatedTitle, setAnimatedTitle] = useState(false);
+    const[animatedProjects, setAnimatedProjects] = useState(false);
+
+
+    const visibleEffect = () => {
+        if(window.scrollY > 360 && window.scrollY < 1000) {
+            setAnimatedTitle(true)
+          }
+          else {
+            setAnimatedTitle(false)
+          }
+    }
+    console.log(window.scrollY)
+    console.log(animatedTitle)
+
+    document.addEventListener('scroll', visibleEffect)
+
+
     return (
         <Box>
-            <Formations id="experiences">Expériences</Formations> 
+            <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={700} animationOutDuration={700} isVisible={animatedTitle}><Formations id="experiences">Expériences</Formations></Animated> 
             <BigBox>
                 <Line>
                     <About>

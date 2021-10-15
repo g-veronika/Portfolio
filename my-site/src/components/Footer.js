@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro'
 import { AiFillGithub } from "react-icons/ai";
 import { GrLinkedin } from "react-icons/gr";
@@ -56,7 +56,7 @@ function Footer(props) {
                     <ColorPick css={'color: #3e6eb5'}  onClick={changeLight}>< IoColorPaletteSharp/></ColorPick>
                  </ColorChoice>
             </Animated>
-                {console.log(animatedGit)}
+                {/* {console.log(animatedGit)} */}
                 <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedGit}><Icon visible={visible}><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon></Animated>
                 <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedLinkedIn}><Icon visible={visible}><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon></Animated>
                 <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedInsta}><Icon visible={visible}><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon></Animated>           
@@ -90,6 +90,7 @@ const ColorChoice = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0.7rem;
+    margin-bottom: 30%;
     border: 1px dotted #64FFDA;
     font-size: 1.2rem;
     background-color: rgb(95 237 224 / 70%);

@@ -16,7 +16,7 @@ function Home() {
           }
     }
 
-    document.addEventListener('scroll', visibleEffect)
+    document.addEventListener('scroll', visibleEffect);
 
 
     return (
