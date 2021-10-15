@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import {Link} from 'react-scroll'
+import {Animated} from "react-animated-css";
 
 function Home() {
+
+    const[animatedButton, setAnimatedButton] = useState(true);
+
+    const visibleEffect = () => {
+        if(window.scrollY > 500) {
+            setAnimatedButton(false)
+          }
+          else {
+            setAnimatedButton(true)
+          }
+    }
+
+    document.addEventListener('scroll', visibleEffect)
+
+
     return (
         <Box id="accueil">
             <ContentWrapper>
@@ -10,7 +26,13 @@ function Home() {
                 <Name>Veronika.</Name>
                 <Things> Je crée des choses pour le web.</Things>
                 <Txt>Après avoir travaillé dans le secteur paramédical, j'ai décidé de m'orienter et de me former dans le développement web. De la création d'interfaces dynamiques à la gestion complexe de bases de données, je m'épanouis en résolvant des problèmes et en apprenant de nouvelles choses.</Txt>
-                <ScrollLink to="experiences" smooth={true} offset={-120}><MyButton>Expériences</MyButton></ScrollLink>
+                
+                <ScrollLink to="experiences" smooth={true} offset={-120}> 
+                    <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animatedButton}>
+                        <MyButton>Expériences</MyButton>
+                    </Animated>
+                </ScrollLink>
+            
             </ContentWrapper>
         </Box>
     )
@@ -118,5 +140,5 @@ const MyButton = styled.button`
 `
 
 const ScrollLink = styled(Link)`
-
+    width: fit-content;
 `
