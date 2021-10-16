@@ -19,13 +19,12 @@ function Work() {
           }
     }
 
-    console.log(window.scrollY)
 
     document.addEventListener('scroll', visibleEffect);
     
     return (
         <Box>
-            <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" animationInDuration={700} animationOutDuration={700} isVisible={animatedWork}><Titre id="projets">Projets</Titre></Animated>
+            <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" animationInDuration={850} animationOutDuration={850} isVisible={animatedWork}><Titre id="projets">Projets</Titre></Animated>
             <Imgtitre>Project 'Days In Paris'</Imgtitre>
             <Lien><LinkUn href="https://days-in-paris.netlify.app/" target="_blank" rel="noreferrer" >https://days-in-paris.netlify.app/</LinkUn></Lien>
             <Datetitre>juillet 2021 - août 2021</Datetitre>

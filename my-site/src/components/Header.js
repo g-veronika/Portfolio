@@ -6,6 +6,7 @@ import {BiMenuAltRight} from "react-icons/bi";
 import {ImCross} from "react-icons/im"; 
 
 
+
 const Header = (props) => {
     
     const [active, setActive] = useState(false)
@@ -15,8 +16,7 @@ const Header = (props) => {
             setActive(false)
         } else {
             setActive(true)
-        }
-        
+        } 
     }
 
 

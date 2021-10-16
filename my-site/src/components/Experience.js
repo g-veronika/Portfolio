@@ -25,7 +25,7 @@ function Experience() {
 
     return (
         <Box>
-            <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={700} animationOutDuration={700} isVisible={animatedTitle}><Formations id="experiences">Expériences</Formations></Animated> 
+            <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={850} animationOutDuration={850} isVisible={animatedTitle}><Formations id="experiences">Expériences</Formations></Animated> 
             <BigBox>
                 <Line>
                     <About>
