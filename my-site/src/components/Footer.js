@@ -13,7 +13,7 @@ function Footer(props) {
     const[animatedGit, setAnimatedGit] = useState(false);
     const[animatedLinkedIn, setAnimatedLinkedIn] = useState(false);
     const[animatedInsta, setAnimatedInsta] = useState(false);
-    const [visible, setVisible] = useState(false)
+    const[visible, setVisible] = useState(false)
 
     const changeDark = (event) => {
         props.setPrimaryColor(true)
@@ -22,7 +22,6 @@ function Footer(props) {
     const changeLight = (event) => {
         props.setPrimaryColor(false)
     }
-
 
     
     const visibleEffect = () => {

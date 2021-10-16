@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { AiTwotoneHeart } from "react-icons/ai";
 import styled from 'styled-components/macro'
 import {Link} from 'react-scroll'
 import {BiMenuAltRight} from "react-icons/bi";
 import {ImCross} from "react-icons/im"; 
+import {Animated} from "react-animated-css";
+
 
 
 
 const Header = (props) => {
     
-    const [active, setActive] = useState(false)
+    const [animAcceuil, setAnimAcceuil] = useState(false);
+    const [animExp, setAnimExp] = useState(false);
+    const [animProj, setAnimProj] = useState(false);
+    const [active, setActive] = useState(false);
+    const[animatedButton, setAnimatedButton] = useState(false);
+
 
     const handleClick = () => {
         if (active) {
@@ -20,16 +27,52 @@ const Header = (props) => {
     }
 
 
+    const visibleEffect = () => {
+        if(window.scrollY > 500) {
+            setAnimatedButton(false)
+          }
+          else {
+            setAnimatedButton(true)
+          }
+    }
+    document.addEventListener('scroll', visibleEffect);
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setAnimAcceuil(true)
+        }, 400)
+        setTimeout(() => {
+            setAnimExp(true)
+        }, 600)
+        setTimeout(() => {
+            setAnimProj(true)
+        }, 800)
+        setTimeout(() => {
+            setAnimatedButton(true)
+        }, 800)
+    }, [])
+
+
+
     return (
         <Nav small={props.smallHeader}>
             
             <Logo to="accueil" smooth={true} offset={-100}><AiTwotoneHeart /></Logo>
             <LogoMobile onClick={handleClick}><BiMenuAltRight /></LogoMobile>
             <Menu>             
+            <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animAcceuil}>
                 <ScrollLink to="accueil" smooth={true} offset={-100}><li>Accueil</li></ScrollLink>
+            </Animated>    
+            <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animExp}>    
                 <ScrollLink to="experiences" smooth={true} offset={-120}><li>Expériences</li></ScrollLink>
+            </Animated>
+            <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animProj}>    
                 <ScrollLink to="projets" smooth={true} offset={-120}><li>Projets</li></ScrollLink>
-                <MyBtn><ScrollLink to="contact" smooth={true} offset={-100}><li>Contact</li></ScrollLink></MyBtn>
+            </Animated>    
+                <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animatedButton}>
+                    <MyBtn><ScrollLink to="contact" smooth={true} offset={-100}><li>Contact</li></ScrollLink></MyBtn>
+                </Animated>
             </Menu>
             <MenuMobile active={active}>
                 <Close onClick={handleClick}><ImCross /></Close>

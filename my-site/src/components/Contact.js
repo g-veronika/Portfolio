@@ -9,7 +9,7 @@ function Contact() {
     const [animatedTitre, setAnimatedTitre] = useState(false)
 
     const dynamicTitre = () => {
-        if(window.scrollY > 2000 && window.scrollY < 3050) {
+        if(window.scrollY > 1700 && window.scrollY < 3050) {
             setAnimatedTitre(true)
           }
           else {
