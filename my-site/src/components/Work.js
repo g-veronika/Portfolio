@@ -9,6 +9,8 @@ function Work() {
 
 
     const[animatedWork, setAnimatedWork] = useState(false);
+    const[animatedImg, setAnimatedImg] = useState(false);
+
 
     const visibleEffect = () => {
         if(window.scrollY > 1000 && window.scrollY < 1750) {
@@ -19,8 +21,19 @@ function Work() {
           }
     }
 
-
     document.addEventListener('scroll', visibleEffect);
+
+
+    const visibleImg = () => {
+        if(window.scrollY > 1300 && window.scrollY < 7000) {
+            setAnimatedImg(true)
+          }
+          else {
+            setAnimatedImg(false)
+          }
+    }
+
+    document.addEventListener('scroll', visibleImg);
     
     return (
         <Box>
@@ -28,7 +41,9 @@ function Work() {
             <Imgtitre>Project 'Days In Paris'</Imgtitre>
             <Lien><LinkUn href="https://days-in-paris.netlify.app/" target="_blank" rel="noreferrer" >https://days-in-paris.netlify.app/</LinkUn></Lien>
             <Datetitre>juillet 2021 - août 2021</Datetitre>
-            <Img src= {Paris} alt="image days in paris"/>
+            <Animated animationIn="fadeInUp" animationOut="fadeOutDown" animationInDuration={1000} animationOutDuration={1000} isVisible={animatedImg}>
+                <Img src= {Paris} alt="image days in paris"/>
+            </Animated>
             <Description>Le projet Days in Paris a pour but de créer une application qui permette à l’utilisateur d'organiser son séjour à Paris.
             L'utilisateur peut choisir des événements (expositions, concerts, spectacles, ...), des restaurants ou des monuments à visiter puis peut ensuite les répartir sur un calendrier pour avoir une bonne visibilité de son séjour et avoir une organisation optimale.
             </Description>

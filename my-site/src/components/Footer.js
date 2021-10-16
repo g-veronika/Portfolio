@@ -9,10 +9,10 @@ import {Animated} from "react-animated-css";
 
 function Footer(props) {
 
-    const[animatedPalette, setAnimatedPalette] = useState(true);
     const[animatedGit, setAnimatedGit] = useState(false);
     const[animatedLinkedIn, setAnimatedLinkedIn] = useState(false);
     const[animatedInsta, setAnimatedInsta] = useState(false);
+
     const[visible, setVisible] = useState(false)
 
     const changeDark = (event) => {
@@ -23,11 +23,7 @@ function Footer(props) {
         props.setPrimaryColor(false)
     }
 
-    
-    const visibleEffect = () => {
-            setAnimatedPalette(false)
-    }
-    document.addEventListener('scroll', visibleEffect)
+
 
 
     useEffect(() => {
@@ -48,23 +44,34 @@ function Footer(props) {
     return (
         <Box>
             <Icons>
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1400} isVisible="true">  
+                    <ColorChoice>
+                        <ColorPick onClick={changeDark}>< IoColorPaletteSharp css={'color: #0A192F'}/></ColorPick>
+                        <ColorPick css={'color: #3e6eb5'}  onClick={changeLight}>< IoColorPaletteSharp/></ColorPick>
+                    </ColorChoice>
+                </Animated>
 
-            <Animated animationIn="fadeInLeft" animationOut="fadeInLeft" animationInDuration={1400} animationOutDuration={1400} isVisible={animatedPalette}>        
-                <ColorChoice>
-                    <ColorPick onClick={changeDark}>< IoColorPaletteSharp css={'color: #0A192F'}/></ColorPick>
-                    <ColorPick css={'color: #3e6eb5'}  onClick={changeLight}>< IoColorPaletteSharp/></ColorPick>
-                 </ColorChoice>
-            </Animated>
-                {/* {console.log(animatedGit)} */}
-                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedGit}><Icon visible={visible}><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon></Animated>
-                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedLinkedIn}><Icon visible={visible}><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon></Animated>
-                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedInsta}><Icon visible={visible}><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon></Animated>           
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedGit}>
+                    <Icon visible={visible}>
+                        <Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link>
+                    </Icon>
+                </Animated>
+
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedLinkedIn}>
+                    <Icon visible={visible}><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
+                </Animated>
+
+                <Animated animationIn="fadeInLeft" animationOut="fadeOutLeft" animationInDuration={1400} animationOutDuration={1} isVisible={animatedInsta}>
+                    <Icon visible={visible}><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>
+                </Animated>  
             </Icons>
+
             <IconsMobile>
                 <Icon><Link href="https://github.com/g-veronika" target="_blank" rel="noreferrer"><AiFillGithub /></Link></Icon>
                 <Icon><a href="https://www.linkedin.com/in/veronika-grebenshchikova-735ba8214/" target="_blank" rel="noreferrer"><GrLinkedin /></a></Icon>
                 <Icon><a href="https://www.instagram.com/veronika.piletskaya/" target="_blank" rel="noreferrer"><GrInstagram /></a></Icon>               
             </IconsMobile>
+
             <Mail><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></Mail>
             <MailMobile><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></MailMobile>
             Designed & Built by Veronika
@@ -94,6 +101,7 @@ const ColorChoice = styled.div`
     font-size: 1.2rem;
     background-color: rgb(95 237 224 / 70%);
     border-radius: 10px;
+    z-index: 10;
     
     svg {
         

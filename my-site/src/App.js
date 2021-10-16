@@ -44,5 +44,6 @@ export default App;
 const Main = styled.div`
   background: ${({primaryColor}) => primaryColor ? '#0A192F' : '#3e6eb5'};
   transition: all 0.8s ease-in-out;
+  overflow: hidden;
 `
 

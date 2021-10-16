@@ -11,9 +11,9 @@ function Home() {
         if(window.scrollY > 500) {
             setAnimatedButton(false)
           }
-          else {
-            setAnimatedButton(true)
-          }
+        else {
+        setAnimatedButton(true)
+        }
     }
 
     document.addEventListener('scroll', visibleEffect);

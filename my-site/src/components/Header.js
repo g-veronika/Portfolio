@@ -15,7 +15,10 @@ const Header = (props) => {
     const [animExp, setAnimExp] = useState(false);
     const [animProj, setAnimProj] = useState(false);
     const [active, setActive] = useState(false);
-    const[animatedButton, setAnimatedButton] = useState(false);
+    const [animatedButton, setAnimatedButton] = useState(false);    
+
+    const[hide, setHide] = useState(false)
+
 
 
     const handleClick = () => {
@@ -27,19 +30,10 @@ const Header = (props) => {
     }
 
 
-    const visibleEffect = () => {
-        if(window.scrollY > 500) {
-            setAnimatedButton(false)
-          }
-          else {
-            setAnimatedButton(true)
-          }
-    }
-    document.addEventListener('scroll', visibleEffect);
-
 
     useEffect(() => {
         setTimeout(() => {
+            setHide(true)
             setAnimAcceuil(true)
         }, 400)
         setTimeout(() => {
@@ -60,19 +54,19 @@ const Header = (props) => {
             
             <Logo to="accueil" smooth={true} offset={-100}><AiTwotoneHeart /></Logo>
             <LogoMobile onClick={handleClick}><BiMenuAltRight /></LogoMobile>
-            <Menu>             
-            <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animAcceuil}>
-                <ScrollLink to="accueil" smooth={true} offset={-100}><li>Accueil</li></ScrollLink>
-            </Animated>    
-            <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animExp}>    
-                <ScrollLink to="experiences" smooth={true} offset={-120}><li>Expériences</li></ScrollLink>
-            </Animated>
-            <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animProj}>    
-                <ScrollLink to="projets" smooth={true} offset={-120}><li>Projets</li></ScrollLink>
-            </Animated>    
-                <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animatedButton}>
-                    <MyBtn><ScrollLink to="contact" smooth={true} offset={-100}><li>Contact</li></ScrollLink></MyBtn>
+            <Menu hide={hide}>             
+                <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1} isVisible={animAcceuil}>
+                    <ScrollLink to="accueil" smooth={true} offset={-100}><li>Accueil</li></ScrollLink>
+                </Animated>    
+                <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1} isVisible={animExp}>    
+                    <ScrollLink to="experiences" smooth={true} offset={-120}><li>Expériences</li></ScrollLink>
                 </Animated>
+                <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1} isVisible={animProj}>    
+                    <ScrollLink to="projets" smooth={true} offset={-120}><li>Projets</li></ScrollLink>
+                </Animated>    
+                    <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1} isVisible={animatedButton}>
+                        <MyBtn><ScrollLink to="contact" smooth={true} offset={-100}><li>Contact</li></ScrollLink></MyBtn>
+                    </Animated>
             </Menu>
             <MenuMobile active={active}>
                 <Close onClick={handleClick}><ImCross /></Close>
@@ -90,6 +84,7 @@ const Header = (props) => {
 export default Header;
 
 const Nav = styled.div`
+    z-index : 10;
     height: ${({small}) => small ? '60px' : '100px'};
     background: #0A192F;
     display: flex;
@@ -101,6 +96,7 @@ const Nav = styled.div`
     transition: all 0.6s ease;
 `
 const Menu = styled.nav`
+    visibility: ${({hide}) => hide ? 'visible' : 'hidden'};
     color: #CCD6F6;
     display: flex;
     justify-content: flex-end;
