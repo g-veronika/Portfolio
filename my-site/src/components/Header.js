@@ -11,6 +11,8 @@ import {Animated} from "react-animated-css";
 
 const Header = (props) => {
     
+    const [animateHeart, setAnimateHeart] = useState(false);
+
     const [animAcceuil, setAnimAcceuil] = useState(false);
     const [animExp, setAnimExp] = useState(false);
     const [animProj, setAnimProj] = useState(false);
@@ -45,6 +47,9 @@ const Header = (props) => {
         setTimeout(() => {
             setAnimatedButton(true)
         }, 800)
+        setTimeout(() => {
+            setAnimateHeart(true)
+        }, 800)
     }, [])
 
 
@@ -52,7 +57,12 @@ const Header = (props) => {
     return (
         <Nav small={props.smallHeader}>
             
-            <Logo to="accueil" smooth={true} offset={-100}><AiTwotoneHeart /></Logo>
+            <Animated animationIn="fadeInLeft" animationOut="fadeOut" animationInDuration={800} animationOutDuration={1000} isVisible={animateHeart}>
+                {console.log(animateHeart)}
+                <Logo to="accueil" smooth={true} offset={-100} visible={animateHeart}><AiTwotoneHeart /></Logo>
+            </Animated>
+
+
             <LogoMobile onClick={handleClick}><BiMenuAltRight /></LogoMobile>
             <Menu hide={hide}>             
                 <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1} isVisible={animAcceuil}>
@@ -143,6 +153,7 @@ const MenuMobile = styled.div`
 `
 
 const Logo = styled(Link)`
+    visibility: ${({visible}) => visible ? "visible" : "hidden"};
     color: #64FFDA;
     font-size: 2rem;
     padding: 2rem 2.7rem;
