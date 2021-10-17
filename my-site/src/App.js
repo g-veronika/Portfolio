@@ -13,6 +13,7 @@ function App() {
 
   const [primaryColor, setPrimaryColor] = useState(true)
   const [smallHeader, setSmallHeader] = useState(false)
+  const [fullName, setFullName] = useState(false)
 
   const changeHeader = () => {
     if(window.scrollY > 500) {
@@ -28,11 +29,12 @@ function App() {
 
   return (
     <Main primaryColor={primaryColor}>
-      {/* {console.log(window.scrollY)} */}
       <Header smallHeader={smallHeader}/>
-      <Home />
+      <Home fullName={fullName}/>
       <Experience />
-      <Work />
+      <Work setFullName={setFullName} 
+        fullName={fullName}
+      />
       <Contact />
       <Footer primaryColor={primaryColor} setPrimaryColor={setPrimaryColor}/>
     </Main>

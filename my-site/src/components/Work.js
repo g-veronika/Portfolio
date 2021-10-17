@@ -5,8 +5,9 @@ import {Animated} from "react-animated-css";
 
 
 
-function Work() {
+function Work(props) {
 
+    console.log('props Work: ',props)
 
     const[animatedWork, setAnimatedWork] = useState(false);
     const[animatedImg, setAnimatedImg] = useState(false);
@@ -33,6 +34,10 @@ function Work() {
           }
     }
 
+    const changeTitle = () => {
+        props.setFullName((value) => !value)
+    }
+
     document.addEventListener('scroll', visibleImg);
     
     return (
@@ -47,6 +52,7 @@ function Work() {
             <Description>Le projet Days in Paris a pour but de créer une application qui permette à l’utilisateur d'organiser son séjour à Paris.
             L'utilisateur peut choisir des événements (expositions, concerts, spectacles, ...), des restaurants ou des monuments à visiter puis peut ensuite les répartir sur un calendrier pour avoir une bonne visibilité de son séjour et avoir une organisation optimale.
             </Description>
+            <button onClick={changeTitle}>Click pour changer le titre</button>
         </Box>
     )
 }

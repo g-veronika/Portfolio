@@ -58,7 +58,7 @@ const Header = (props) => {
         <Nav small={props.smallHeader}>
             
             <Animated animationIn="fadeInLeft" animationOut="fadeOut" animationInDuration={800} animationOutDuration={1000} isVisible={animateHeart}>
-                {console.log(animateHeart)}
+                {/* {console.log(animateHeart)} */}
                 <Logo to="accueil" smooth={true} offset={-100} visible={animateHeart}><AiTwotoneHeart /></Logo>
             </Animated>
 

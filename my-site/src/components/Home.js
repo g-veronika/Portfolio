@@ -3,7 +3,9 @@ import styled from 'styled-components/macro'
 import {Link} from 'react-scroll'
 import {Animated} from "react-animated-css";
 
-function Home() {
+function Home(props) {
+
+    console.log('props Home: ',props.fullName)
 
     const[animatedButton, setAnimatedButton] = useState(true);
 
@@ -23,7 +25,7 @@ function Home() {
         <Box id="accueil">
             <ContentWrapper>
                 <MyTitle>Bonjour, je m'appelle</MyTitle>
-                <Name>Veronika.</Name>
+                <Name>{props.fullName ? 'Veronika Grebenshchikova.' : 'Veronika.'}</Name>
                 <Things> Je crée des choses pour le web.</Things>
                 <Txt>Après avoir travaillé dans le secteur paramédical, j'ai décidé de m'orienter et de me former dans le développement web. De la création d'interfaces dynamiques à la gestion complexe de bases de données, je m'épanouis en résolvant des problèmes et en apprenant de nouvelles choses.</Txt>
                 
