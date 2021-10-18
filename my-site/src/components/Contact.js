@@ -4,7 +4,8 @@ import styled from 'styled-components/macro'
 import {Animated} from "react-animated-css";
 
 
-function Contact() {
+function Contact(props) {
+    
 
     const [animatedTitre, setAnimatedTitre] = useState(false)
 
@@ -18,7 +19,21 @@ function Contact() {
     }
 
 
+    //On cree un boolean qui change true a false et inversement
+      const changeName = () => {
+        props.setChangeName((value) => !value);  
+      }  
+
+    //   const changeLink = () => {
+    //     props.setChangeLink((value) => !value);  
+    //   }  
+    
+    
+
     document.addEventListener('scroll', dynamicTitre);
+
+
+
 
 
     return (
@@ -28,7 +43,9 @@ function Contact() {
                 <Txt>Je cherche aujourd’hui un premier emploi en tant que développeuse Fullstack d'application web et mobile.</Txt>
                 <Mail><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></Mail>
                 <Logo><FiMail /></Logo>
-            </ContactBox>        
+            </ContactBox>  
+            <button onClick={changeName}>Changer le nom du bouton</button>
+
         </Box>
     )
 }

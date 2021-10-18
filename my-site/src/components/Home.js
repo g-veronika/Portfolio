@@ -5,8 +5,6 @@ import {Animated} from "react-animated-css";
 
 function Home(props) {
 
-    console.log('props Home: ',props.fullName)
-
     const[animatedButton, setAnimatedButton] = useState(true);
 
     const visibleEffect = () => {
@@ -18,6 +16,9 @@ function Home(props) {
         }
     }
 
+    let changeLinks = props.changeName ? "projets" : "experiences" 
+
+    console.log(changeLinks)
     document.addEventListener('scroll', visibleEffect);
 
 
@@ -29,12 +30,11 @@ function Home(props) {
                 <Things> Je crée des choses pour le web.</Things>
                 <Txt>Après avoir travaillé dans le secteur paramédical, j'ai décidé de m'orienter et de me former dans le développement web. De la création d'interfaces dynamiques à la gestion complexe de bases de données, je m'épanouis en résolvant des problèmes et en apprenant de nouvelles choses.</Txt>
                 
-                <ScrollLink to="experiences" smooth={true} offset={-120}> 
+                <ScrollLink to={changeLinks} smooth={true} offset={-120}> 
                     <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animatedButton}>
-                        <MyButton>Expériences</MyButton>
+                        <MyButton>{props.changeName ? 'Projects' : 'Experiences'}</MyButton>
                     </Animated>
                 </ScrollLink>
-            
             </ContentWrapper>
         </Box>
     )

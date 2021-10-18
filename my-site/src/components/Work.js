@@ -7,7 +7,6 @@ import {Animated} from "react-animated-css";
 
 function Work(props) {
 
-    console.log('props Work: ',props)
 
     const[animatedWork, setAnimatedWork] = useState(false);
     const[animatedImg, setAnimatedImg] = useState(false);

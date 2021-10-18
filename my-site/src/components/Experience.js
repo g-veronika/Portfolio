@@ -11,7 +11,7 @@ function Experience() {
 
 
     const visibleEffect = () => {
-        if(window.scrollY > 300 && window.scrollY < 1000) {
+        if(window.scrollY > 300 && window.scrollY < 1200) {
             setAnimatedTitle(true)
           }
           else {

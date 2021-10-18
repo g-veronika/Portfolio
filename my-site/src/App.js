@@ -14,7 +14,13 @@ function App() {
   const [primaryColor, setPrimaryColor] = useState(true)
   const [smallHeader, setSmallHeader] = useState(false)
   const [fullName, setFullName] = useState(false)
+  const [changeName, setChangeName] = useState(false);
+  const [changeLink, setChangeLink] = useState(false);
 
+
+
+
+  
   const changeHeader = () => {
     if(window.scrollY > 500) {
       setSmallHeader(true)
@@ -29,13 +35,15 @@ function App() {
 
   return (
     <Main primaryColor={primaryColor}>
-      <Header smallHeader={smallHeader}/>
-      <Home fullName={fullName}/>
-      <Experience />
-      <Work setFullName={setFullName} 
-        fullName={fullName}
+      <Header smallHeader={smallHeader} />
+      <Home fullName={fullName} 
+      changeName={changeName}
+      changeLink={changeLink}
       />
-      <Contact />
+      <Experience />
+      <Work setFullName={setFullName} />
+      <Contact setChangeName={setChangeName}
+      setChangeLink={setChangeLink}/>
       <Footer primaryColor={primaryColor} setPrimaryColor={setPrimaryColor}/>
     </Main>
   );
@@ -48,4 +56,3 @@ const Main = styled.div`
   transition: all 0.8s ease-in-out;
   overflow: hidden;
 `
-
