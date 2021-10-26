@@ -18,21 +18,7 @@ function Contact(props) {
           }
     }
 
-
-    //On cree un boolean qui change true a false et inversement
-      const changeName = () => {
-        props.setChangeName((value) => !value);  
-      }  
-
-    //   const changeLink = () => {
-    //     props.setChangeLink((value) => !value);  
-    //   }  
-    
-    
-
     document.addEventListener('scroll', dynamicTitre);
-
-
 
 
 
@@ -44,7 +30,7 @@ function Contact(props) {
                 <Mail><a href="mailto:gveronikaa@hotmail.com" rel="noreferrer">gveronikaa@hotmail.com</a></Mail>
                 <Logo><FiMail /></Logo>
             </ContactBox>  
-            <button onClick={changeName}>Changer le nom du bouton</button>
+
 
         </Box>
     )

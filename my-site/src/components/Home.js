@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import {Link} from 'react-scroll'
+import Logo from '../photos/Logo.svg'
 import {Animated} from "react-animated-css";
 
 function Home(props) {
@@ -18,7 +19,6 @@ function Home(props) {
 
     let changeLinks = props.changeName ? "projets" : "experiences" 
 
-    console.log(changeLinks)
     document.addEventListener('scroll', visibleEffect);
 
 
@@ -33,6 +33,9 @@ function Home(props) {
                 <ScrollLink to={changeLinks} smooth={true} offset={-120}> 
                     <Animated animationIn="fadeInDown" animationOut="fadeOutUp" animationInDuration={2000} animationOutDuration={1000} isVisible={animatedButton}>
                         <MyButton>{props.changeName ? 'Projects' : 'Experiences'}</MyButton>
+                    </Animated>
+                    <Animated animationIn="fadeInUp" animationOut="fadeOutLeft" animationInDuration={2000} animationOutDuration={1000} isVisible={animatedButton} css={'text-align: center'}>
+                        <Img src= {Logo} alt="image logo"/>
                     </Animated>
                 </ScrollLink>
             </ContentWrapper>
@@ -63,64 +66,64 @@ const Box = styled.div`
 const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: 50vh;
     justify-content: space-between;
     width: 80%;
     margin: auto;
+    overflow: hidden;
 `
 
 const MyTitle = styled.h1`
     font-size: clamp(1.5rem, 2vw, 2rem);
     color: #64FFDA;
-    margin: 2rem 7rem -4rem;
-    padding: 4rem 2rem;
-
+    margin: 0;
+    padding: 0;
+/* 
     @media screen and (max-width:1500px){
         padding: 0;
         margin: 0;
-    }
+    } */
 `
 
 const Name = styled.h1`
     color: #CCD6F6;
     font-size: clamp(2rem, 6vw, 3rem);
-    margin: -2rem 8rem;
-    padding: 15px;
+    margin: 0;
+    padding: 0;
 
-    @media screen and (max-width:1500px){
+    /* @media screen and (max-width:1500px){
         padding: 0;
         margin: 0;
-    }
+    } */
 
  `
 
 const Txt = styled.section`
     color: #CCD6F6;
-    margin: -1rem 8rem;
-    padding: 1rem;
+    margin: 0;
+    padding: 0;
     text-align: left;
 
-    @media screen and (max-width:1500px){
+    /* @media screen and (max-width:1500px){
         padding: 0;
         margin: 0;
-    }
+    } */
 `
 
 const Things = styled.h1`
     color: #8892B0;
     font-size: clamp(1.5rem, 6vw, 3rem);
-    margin: 1rem 9rem;
-    padding: -2rem;
+    margin: 2rem 0;
+    padding: 0;
 
-    @media screen and (max-width:1500px){
+    /* @media screen and (max-width:1500px){
         padding: 0;
         margin: 0;
-    }
+    } */
     
 `
 
 const MyButton = styled.button`
-    margin: 2rem 9rem;
+    margin: 2rem 0rem;
     padding: 1.2rem;
     background: #0A192F;
     color: #64FFDA;
@@ -143,4 +146,9 @@ const MyButton = styled.button`
 
 const ScrollLink = styled(Link)`
     width: fit-content;
+`
+
+
+const Img  = styled.img`
+    width: 50%;
 `
