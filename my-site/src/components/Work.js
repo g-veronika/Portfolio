@@ -47,7 +47,7 @@ function Work(props) {
             <Animated animationIn="fadeInUp" animationOut="fadeOutDown" animationInDuration={1000} animationOutDuration={1000} isVisible={animatedImg}>
                 <a href="https://daysinparis.netlify.app/" target="_blank" rel="noreferrer"><Img src= {Paris} alt="image days in paris"/></a>
             </Animated>
-            <Description>Le projet Days in Paris a pour but de créer une application qui permette à l’utilisateur d'organiser son séjour à Paris.
+            <Description>Le projet Days in Paris a pour but de créer une application qui permet à l’utilisateur d'organiser son séjour à Paris.
             L'utilisateur peut choisir des événements (expositions, concerts, spectacles, ...), des restaurants ou des monuments à visiter puis peut ensuite les répartir sur un calendrier pour avoir une bonne visibilité de son séjour et avoir une organisation optimale.
             </Description>
         </Box>
