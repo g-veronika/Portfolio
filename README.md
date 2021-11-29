@@ -1,6 +1,7 @@
 <h1 align="center"><strong>Portfolio</strong></h1>
-
-<img align="center" width="30%" src="https://github.com/g-veronika/Portfolio/blob/master/my-site/src/photos/Logo.svg"/>
+<p align="center" >
+  <img width="30%" src="https://github.com/g-veronika/Portfolio/blob/master/my-site/src/photos/Logo.svg"/>
+</p>
 
 Je vous présente la première version de mon site perso ! 
 Vous pouvez y retrouver mon parcours professionnel ainsi que mes expériences et les projets realisés.  
