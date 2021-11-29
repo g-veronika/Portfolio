@@ -1,5 +1,8 @@
 # Portfolio
 
+Je vous présente la première version de mon site perso ! 
+Vous pouvez y retrouver mon parcours professionnel ainsi que mes expériences et les projets realisés.  
+
 <strong>https://veronika-grebenshchikova.com/</strong>
 
 ## Technos utilisées
