@@ -1,4 +1,4 @@
-# Portfolio
+<h1 align="center"><strong>Portfolio</strong></h1>
 
 Je vous présente la première version de mon site perso ! 
 Vous pouvez y retrouver mon parcours professionnel ainsi que mes expériences et les projets realisés.  
