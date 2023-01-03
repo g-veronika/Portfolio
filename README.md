@@ -10,7 +10,6 @@ Vous pouvez y retrouver mon parcours professionnel ainsi que mes expériences et
 
 ## Technos utilisées
 
--JavaScript<br/>
 -React<br/>
 -Styled-components<br/><br/>
 Afin d’avoir une fonctionnalité amusante pour l’utilisateur, j’ai fait le choix de rajouter une palette disponible à tout moment sur l’application qui permet de changer la gamme de couleurs. Il est proposé une version ‘dark’ par défaut et une version ‘light’. Les hooks de React m’ont permis de faire cela.<br/>
